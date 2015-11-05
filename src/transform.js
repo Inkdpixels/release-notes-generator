@@ -1,4 +1,3 @@
-const types = ['[TASK]', '[BUGFIX]', '[FEATURE]', '[DOCS]'];
 const sections = {
 	'[TASK]': 'Miscellaneous',
 	'[BUGFIX]': 'Bugfixes',
@@ -6,6 +5,7 @@ const sections = {
 	'[DOCS]': 'Documentation',
 	'[!!!]': 'BREAKING CHANGES'
 };
+const types = Object.keys(sections);
 
 export default commit => {
 	const header = commit.header;
