@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "babel": "^5.8.29",
+    "concat-stream": "^1.5.1",
     "conventional-changelog": "^0.5.1",
     "github-url-from-git": "^1.4.0"
   },
