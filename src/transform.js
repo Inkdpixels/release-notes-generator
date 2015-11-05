@@ -3,7 +3,8 @@ const sections = {
 	'[TASK]': 'Miscellaneous',
 	'[BUGFIX]': 'Bugfixes',
 	'[FEATURE]': 'Features',
-	'[DOCS]': 'Documentation'
+	'[DOCS]': 'Documentation',
+	'[!!!]': 'BREAKING CHANGES'
 };
 
 export default commit => {

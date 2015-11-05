@@ -70,4 +70,17 @@ describe('The "transform function"', () => {
 
 		done();
 	});
+
+	it('should modify the commit data if a [!!!] prefix was foud in the commit header.', done => {
+		const result = transform({
+			header: '[!!!] My commit header',
+			body: '',
+			type: ''
+		});
+
+		expect(result.header).to.equal('My commit header');
+		expect(result.type).to.equal('BREAKING CHANGES');
+
+		done();
+	});
 });
