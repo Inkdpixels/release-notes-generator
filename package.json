@@ -1,6 +1,6 @@
 {
   "name": "@inkdpixels/release-notes-generator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A release-notes-generator plugin for semantic-release.",
   "main": "dist/index.js",
   "scripts": {
