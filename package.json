@@ -1,7 +1,7 @@
 {
   "name": "@inkdpixels/release-notes-generator",
-  "version": "0.0.4",
-  "description": "A release-notes-generator plugin for semantic-release.",
+  "version": "1.0.0",
+  "description": "Plugin for semantic-release which utilizes the commit guidelines of Neos.",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "npm run build",

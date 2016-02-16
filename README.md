@@ -1,7 +1,7 @@
 # @inkdpixels/release-notes-generator
 [![Build Status](https://travis-ci.org/Inkdpixels/release-notes-generator.svg)](https://travis-ci.org/Inkdpixels/release-notes-generator) [![Dependency Status](https://david-dm.org/Inkdpixels/release-notes-generator.svg)](https://david-dm.org/inkdpixels/release-notes-generator) [![devDependency Status](https://david-dm.org/Inkdpixels/release-notes-generator/dev-status.svg)](https://david-dm.org/inkdpixels/release-notes-generator#info=devDependencies) [![Code Climate](https://codeclimate.com/github/Inkdpixels/release-notes-generator/badges/gpa.svg)](https://codeclimate.com/github/Inkdpixels/release-notes-generator) [![Test Coverage](https://codeclimate.com/github/Inkdpixels/release-notes-generator/badges/coverage.svg)](https://codeclimate.com/github/Inkdpixels/release-notes-generator/coverage)
 
-> A release-notes-generator plugin for semantic-release.
+> Plugin for semantic-release which utilizes the commit guidelines of Neos.
 
 ## Installation
 ```js
@@ -20,7 +20,7 @@ Specify the custom release-notes-generator plugin in your projects `package.json
 ```
 
 ## Commit message guidelines
-The commit message guidelines, on which this plugin also relies on, are explained on [Inkdpixels/commit-analyzer](https://github.com/Inkdpixels/commit-analyzer#commit-message-guidelines).
+The commit message guidelines, on which this plugin also relies on, are explained over at [Inkdpixels/commit-analyzer](https://github.com/Inkdpixels/commit-analyzer#commit-message-guidelines).
 
 ## Contributing
 We use xo to lint the code, please take care to run `npm test` before you commit something.

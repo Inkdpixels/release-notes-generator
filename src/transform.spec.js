@@ -3,7 +3,7 @@ import transform from './transform.js';
 
 const {expect} = chai;
 
-describe('The "transform function"', () => {
+describe('The "transform function" - ', () => {
 	it('should return a object.', done => {
 		const result = transform({
 			header: '',
@@ -19,9 +19,9 @@ describe('The "transform function"', () => {
 		done();
 	});
 
-	it('should modify the commit data if a [TASK] prefix was foud in the commit header.', done => {
+	it('should modify the commit data if the `TASK:` prefix was found at the beginning of the commit header.', done => {
 		const result = transform({
-			header: '[TASK] My commit header',
+			header: 'TASK: My commit header',
 			body: '',
 			type: ''
 		});
@@ -32,9 +32,9 @@ describe('The "transform function"', () => {
 		done();
 	});
 
-	it('should modify the commit data if a [DOCS] prefix was foud in the commit header.', done => {
+	it('should modify the commit data if the `DOCS:` prefix was found at the beginning of the commit header.', done => {
 		const result = transform({
-			header: '[DOCS] My commit header',
+			header: 'DOCS: My commit header',
 			body: '',
 			type: ''
 		});
@@ -45,9 +45,9 @@ describe('The "transform function"', () => {
 		done();
 	});
 
-	it('should modify the commit data if a [BUGFIX] prefix was foud in the commit header.', done => {
+	it('should modify the commit data if the `BUGFIX:` prefix was found at the beginning of the commit header.', done => {
 		const result = transform({
-			header: '[BUGFIX] My commit header',
+			header: 'BUGFIX: My commit header',
 			body: '',
 			type: ''
 		});
@@ -58,9 +58,9 @@ describe('The "transform function"', () => {
 		done();
 	});
 
-	it('should modify the commit data if a [FEATURE] prefix was foud in the commit header.', done => {
+	it('should modify the commit data if the `FEATURE:` prefix was found at the beginning of the commit header.', done => {
 		const result = transform({
-			header: '[FEATURE] My commit header',
+			header: 'FEATURE: My commit header',
 			body: '',
 			type: ''
 		});
@@ -71,9 +71,9 @@ describe('The "transform function"', () => {
 		done();
 	});
 
-	it('should modify the commit data if a [!!!] prefix was foud in the commit header.', done => {
+	it('should modify the commit data if the `!!!` prefix was found at the beginning of the commit header.', done => {
 		const result = transform({
-			header: '[!!!] My commit header',
+			header: '!!! TASK: My commit header',
 			body: '',
 			type: ''
 		});

@@ -1,19 +1,19 @@
-const sections = {
-	'[TASK]': 'Miscellaneous',
-	'[BUGFIX]': 'Bugfixes',
-	'[FEATURE]': 'Features',
-	'[DOCS]': 'Documentation',
-	'[!!!]': 'BREAKING CHANGES'
-};
-const types = Object.keys(sections);
+import stripCommitTypeFromString from './stripCommitTypeFromString.js';
+import {sections, commitTypes} from './types.js';
 
 export default commit => {
-	const header = commit.header;
+	const {header} = commit;
 
-	types.forEach(type => {
-		if (header.indexOf(type) > -1) {
+	//
+	// Iterate over all section types and find the matching section type for the commit.
+	// The result is based upon the commit header, which should start with one of the given keys of the sections object.
+	//
+	// We start with the TYPO3 guidelines and afterwards check the Neos guidelines, since they need a special transformation of the commit header.
+	//
+	commitTypes.forEach(type => {
+		if (header.indexOf(type) === 0) {
 			commit.type = sections[type];
-			commit.header = commit.header.replace(`${type} `, '');
+			commit.header = stripCommitTypeFromString(header);
 		}
 	});
 
