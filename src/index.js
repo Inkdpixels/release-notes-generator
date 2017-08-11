@@ -1,10 +1,10 @@
-import concat from 'concat-stream';
-import {StringDecoder} from 'string_decoder';
-import parseGitHubUrl from 'github-url-from-git';
-import changelog from 'conventional-changelog';
-import transform from './transform.js';
+const concat = require('concat-stream');
+const {StringDecoder} = require('string_decoder');
+const parseGitHubUrl = require('github-url-from-git');
+const changelog = require('conventional-changelog');
+const transform = require('./transform.js');
 
-export default (pluginConfig, {pkg}, cb) => {
+module.exports = (pluginConfig, {pkg}, cb) => {
 	const repository = pkg.repository ? parseGitHubUrl(pkg.repository.url) : null;
 
 	function onStreamData(buffer) {

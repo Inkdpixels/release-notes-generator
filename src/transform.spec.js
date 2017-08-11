@@ -1,86 +1,71 @@
-import chai from 'chai';
-import transform from './transform.js';
+const transform = require('./transform.js');
 
-const {expect} = chai;
-
-describe('The "transform function" - ', () => {
-	it('should return a object.', done => {
+describe('transform()', () => {
+	it('should return a object.', () => {
 		const result = transform({
 			header: '',
 			body: '',
 			type: ''
 		});
 
-		expect(result).to.be.an('object');
-		expect(result).to.have.property('header');
-		expect(result).to.have.property('body');
-		expect(result).to.have.property('type');
-
-		done();
+		expect(typeof result).toBe('object');
+		expect(result.header).toBeDefined();
+		expect(result.body).toBeDefined();
+		expect(result.type).toBeDefined();
 	});
 
-	it('should modify the commit data if the `TASK:` prefix was found at the beginning of the commit header.', done => {
+	it('should modify the commit data if the `TASK:` prefix was found at the beginning of the commit header.', () => {
 		const result = transform({
 			header: 'TASK: My commit header',
 			body: '',
 			type: ''
 		});
 
-		expect(result.header).to.equal('My commit header');
-		expect(result.type).to.equal('Miscellaneous');
-
-		done();
+		expect(result.header).toBe('My commit header');
+		expect(result.type).toBe('Miscellaneous');
 	});
 
-	it('should modify the commit data if the `DOCS:` prefix was found at the beginning of the commit header.', done => {
+	it('should modify the commit data if the `DOCS:` prefix was found at the beginning of the commit header.', () => {
 		const result = transform({
 			header: 'DOCS: My commit header',
 			body: '',
 			type: ''
 		});
 
-		expect(result.header).to.equal('My commit header');
-		expect(result.type).to.equal('Documentation');
-
-		done();
+		expect(result.header).toBe('My commit header');
+		expect(result.type).toBe('Documentation');
 	});
 
-	it('should modify the commit data if the `BUGFIX:` prefix was found at the beginning of the commit header.', done => {
+	it('should modify the commit data if the `BUGFIX:` prefix was found at the beginning of the commit header.', () => {
 		const result = transform({
 			header: 'BUGFIX: My commit header',
 			body: '',
 			type: ''
 		});
 
-		expect(result.header).to.equal('My commit header');
-		expect(result.type).to.equal('Bugfixes');
-
-		done();
+		expect(result.header).toBe('My commit header');
+		expect(result.type).toBe('Bugfixes');
 	});
 
-	it('should modify the commit data if the `FEATURE:` prefix was found at the beginning of the commit header.', done => {
+	it('should modify the commit data if the `FEATURE:` prefix was found at the beginning of the commit header.', () => {
 		const result = transform({
 			header: 'FEATURE: My commit header',
 			body: '',
 			type: ''
 		});
 
-		expect(result.header).to.equal('My commit header');
-		expect(result.type).to.equal('Features');
-
-		done();
+		expect(result.header).toBe('My commit header');
+		expect(result.type).toBe('Features');
 	});
 
-	it('should modify the commit data if the `!!!` prefix was found at the beginning of the commit header.', done => {
+	it('should modify the commit data if the `!!!` prefix was found at the beginning of the commit header.', () => {
 		const result = transform({
 			header: '!!! TASK: My commit header',
 			body: '',
 			type: ''
 		});
 
-		expect(result.header).to.equal('My commit header');
-		expect(result.type).to.equal('BREAKING CHANGES');
-
-		done();
+		expect(result.header).toBe('My commit header');
+		expect(result.type).toBe('BREAKING CHANGES');
 	});
 });

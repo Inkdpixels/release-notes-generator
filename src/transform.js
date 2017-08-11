@@ -1,7 +1,7 @@
-import stripCommitTypeFromString from './stripCommitTypeFromString.js';
-import {sections, commitTypes} from './types.js';
+const stripCommitTypeFromString = require('./stripCommitTypeFromString.js');
+const {sections, commitTypes} = require('./types.js');
 
-export default commit => {
+module.exports = commit => {
 	const {header} = commit;
 
 	//
