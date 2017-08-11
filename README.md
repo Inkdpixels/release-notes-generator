@@ -1,4 +1,6 @@
 # @inkdpixels/release-notes-generator
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Inkdpixels/release-notes-generator.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/Inkdpixels/release-notes-generator.svg)](https://travis-ci.org/Inkdpixels/release-notes-generator) [![Dependency Status](https://david-dm.org/Inkdpixels/release-notes-generator.svg)](https://david-dm.org/inkdpixels/release-notes-generator) [![devDependency Status](https://david-dm.org/Inkdpixels/release-notes-generator/dev-status.svg)](https://david-dm.org/inkdpixels/release-notes-generator#info=devDependencies) [![Code Climate](https://codeclimate.com/github/Inkdpixels/release-notes-generator/badges/gpa.svg)](https://codeclimate.com/github/Inkdpixels/release-notes-generator) [![Test Coverage](https://codeclimate.com/github/Inkdpixels/release-notes-generator/badges/coverage.svg)](https://codeclimate.com/github/Inkdpixels/release-notes-generator/coverage)
 
 > Plugin for semantic-release which utilizes the commit guidelines of Neos.
